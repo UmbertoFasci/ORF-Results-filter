@@ -1,10 +1,6 @@
 # Filter Fasta program by Umberto Fasci
 
-#import itertools
-
 user_input = input("Enter mixed FASTA file: ")
-
-#codons = [''.join(p) for p in itertools.product('acgt', repeat=3)] #list of all possible three-nucleotide combination. For future code improvement.
 
 fna_content = (">ORF", "ttt", "ttc", "tta", "ttg", "tct", "tcc",
  "tca", "tcg", "tat", "tac", "taa", "tag", "tgt", "tgc", "tga",
@@ -29,8 +25,6 @@ try:
 except FileNotFoundError:
     print(user_input + ' ' + 'not found.')
 
-#in_file.close()
-
 fna_file = open(user_input.replace(".fasta", '') + 'dna.fna', 'w')
 for line in final_fna:
     fna_file.write(line)
@@ -46,9 +40,6 @@ try:
             pass       
 except FileNotFoundError:
     print(user_input + ' ' + 'not found.')
-    
-
-#in_file.close()
 
 faa_file = open(user_input.replace(".fasta", '') + 'prot.faa', 'w')
 for line in final_faa:
